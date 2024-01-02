@@ -4,13 +4,13 @@
 
 @page :left {
     @top-left {
-      content: string(data-session-code);
+      content: string(sess-code, last);
     }
   }
   
   @page :right {
     @top-right {
-      content: string(sess-code);
+      content: string(sess-code, last);
     }
   }
 
