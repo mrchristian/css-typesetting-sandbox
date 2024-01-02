@@ -4,13 +4,13 @@
 
 @page :left {
     @top-left {
-      content: string(sess-code);
+      content: string(sess-code, first);
     }
   }
   
   @page :right {
     @top-right {
-      content: string(sess-code);
+      content: string(sess-code, first);
     }
   }
 
@@ -19,5 +19,5 @@
   }
 
 
-  
+
 
