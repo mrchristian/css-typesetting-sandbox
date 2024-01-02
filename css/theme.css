@@ -2,13 +2,13 @@
 
 @page :left {
     @top-left {
-      content: string(sess-code, first);
+      content: string(sess-code, last);
     }
   }
   
   @page :right {
     @top-right {
-      content: string(sess-code, first);
+      content: string(sess-code, last);
     }
   }
 
@@ -16,4 +16,4 @@
     string-set: sess-code attr(data-session-code);
   }
 
-  
+
