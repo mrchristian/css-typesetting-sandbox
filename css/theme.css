@@ -15,7 +15,7 @@
   }
 
 [data-session-code] {
-    string-set: sess-code attr(data-session-code);
+    string-set: sess-code attr();
   }
 
 
