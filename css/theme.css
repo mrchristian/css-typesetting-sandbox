@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@page :left {
+    @top-left {
+      content: string(sess-code, first);
+    }
+  }
+  
+  @page :right {
+    @top-right {
+      content: string(sess-code, first);
+    }
+  }
+
+[data-session-code] {
+    string-set: sess-code attr(data-session-code);
+  }
+
+  
