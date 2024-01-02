@@ -1,14 +1,16 @@
 @charset "UTF-8";
 
+/* Content: https://www.w3.org/TR/css-gcpm-3/#setting-named-strings-the-string-set-pro */
+
 @page :left {
     @top-left {
-      content: string(sess-code, last);
+      content: string(sess-code, first);
     }
   }
   
   @page :right {
     @top-right {
-      content: string(sess-code, last);
+      content: string(sess-code, first);
     }
   }
 
