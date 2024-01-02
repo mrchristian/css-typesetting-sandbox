@@ -4,20 +4,20 @@
 
 @page :left {
     @top-left {
-      content: element(header);
+      content: string(sess-code);
     }
   }
   
   @page :right {
-    @top-right { 
-      content: element(header);
+    @top-right {
+      content: string(sess-code);
     }
   }
-
-h1 { position: running(header); }
 
 [data-session-code] {
     string-set: sess-code attr(data-session-code);
   }
 
+
+  
 
