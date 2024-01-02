@@ -9,6 +9,7 @@
     "author": "The author",
     "inLanguage": "en",
     "readingOrder": [ 
+      "index.html",
       "chap01.html",
       "chap02.html"
     ]
