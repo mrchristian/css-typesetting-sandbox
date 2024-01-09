@@ -3,15 +3,20 @@
 /* 1.2.1 The running() value https://www.w3.org/TR/css-gcpm-3/#running-syntax */
 
 @page :left {
-    @top-left p.rh { 
+    @top-left 
+    p.rh { 
       position: running(heading); 
       }
   }
   
   @page :right {
-    @top-right p.rh { 
+    @top-right 
+    p.rh { 
       position: running(heading); 
       }
+      {
+        content: running(heading); 
+        }
   }
 
 
