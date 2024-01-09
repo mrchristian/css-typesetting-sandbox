@@ -1,22 +1,20 @@
 @charset "UTF-8";
 
-/* Content: https://www.w3.org/TR/css-gcpm-3/#setting-named-strings-the-string-set-pro */
+/* 1.2.1 The running() value https://www.w3.org/TR/css-gcpm-3/#running-syntax */
 
 @page :left {
-    @top-left {
-      content: string(sess-code, first);
-    }
+    @top-left p.rh { 
+      position: running(heading); 
+      }
   }
   
   @page :right {
-    @top-right {
-      content: string(sess-code, first);
-    }
+    @top-right p.rh { 
+      position: running(heading); 
+      }
   }
 
-[data-session-code] {
-    string-set: sess-code attr(data-session-code);
-  }
+
 
 
 
