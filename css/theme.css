@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* Using strings in the header page media content https://www.w3.org/TR/css-gcpm-3/#setting-named-strings-the-string-set-pro */
+/* Using strings in the header page media content https://www.w3.org/TR/css-gcpm-3/#setting-named-strings-the-string-set-pro and HTML data tag https://www.w3.org/wiki/Choosing_an_HTML_Data_Format */
 
 @page :left {
   @top-left {
