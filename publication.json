@@ -9,6 +9,10 @@
     "author": "The author",
     "inLanguage": "en",
     "readingOrder": [ 
+      {
+        "url": "toc.html",
+        "rel": "contents"
+      },
       "index.html",
       "chap01.html",
       "chap02.html"
