@@ -24,8 +24,44 @@
 
 /* add page number to the table of contents */
 
-.TOC a::after { 
-  content: leader(space) " " target-counter(attr(href url), page);
+
+
+.toc a::after {  
+  content: leader(dotted) "" target-counter(attr(href url), page);
+}
+.toc ul {
+  list-style-type: none;
+  margin:0;
+}
+.toc li {
+  padding-bottom: 10pt;
+}
+.toc a {
+  display: inline-flex;
+  /* width: 100%; */
+  flex: 1;
+  text-decoration: none;
+  /* justify-content: space-between; */
+  align-items: flex-end;
+  color: black;
+  pointer-events: none;
+}
+
+span.descres-code {
+  /* display: inline-block; */
+  /* min-width: 90px; */
+  margin-right: 30px;
+  align-self: baseline;
+}
+.toc a > span.descres-code {
+  pointer-events: auto!important;
+  color:blue;
+  text-decoration:underline!important;
+}
+.toc a > span.descres-title {
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 
