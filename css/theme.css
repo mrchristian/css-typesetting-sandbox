@@ -24,7 +24,15 @@
 
 /* add page number to the table of contents */
 
-
+div.toc>div {
+  display: flex;
+  font-size:9pt;
+  font-style: italic;
+  justify-content: space-between;
+  line-height:1.2;
+  margin-right: 2px;
+  margin-bottom:6pt;
+}
 
 .toc a::after {  
   content: leader(dotted) "" target-counter(attr(href url), page);
@@ -33,6 +41,7 @@
 .toc ul {
   list-style-type: none;
   margin:0;
+  padding-left:0;
 }
 .toc li {
   padding-bottom: 10pt;
@@ -46,6 +55,9 @@
   align-items: flex-end;
   color: black;
   pointer-events: none;
+  font-family:Times New Roman;
+  font-size: 9.96pt;
+  line-height: 1.2;
 }
 
 span.descres-code {
