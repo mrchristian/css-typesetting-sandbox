@@ -1,7 +1,13 @@
 @charset "UTF-8";
 
 /* Using strings in the header page media content https://www.w3.org/TR/css-gcpm-3/#setting-named-strings-the-string-set-pro and HTML data tag https://www.w3.org/wiki/Choosing_an_HTML_Data_Format */
-
+@page{
+  size: 210mm 297mm;
+  margin-left: 20mm;
+  margin-right: 20mm;
+  margin-top:30mm;
+  margin-bottom: 20mm;
+}
 @page :left {
   @top-left {
     content: string(sess-code, first);
@@ -13,7 +19,50 @@
     content: string(sess-code, first);
   }
 }
+@page SessionPre {
+  margin-left: 20mm;
+  margin-right: 20mm;
+  margin-top:30mm;
+  margin-bottom:40mm;
+  
+  @top-left {
+    content: element(logo)"United Nations"; 
+    vertical-align: bottom;
+    font-family: Times New Roman;
+    font-size:14.04pt;
+    line-heigh: 1.2;
+    margin-bottom: 5mm;
+    border-bottom: 1pt solid #000;
+    width:60mm;
+}
+  @top-center {
+    content:"";
+    width:50mm;
+    margin-bottom: 5mm;
+    border-bottom: 1pt solid #000; 
+  }
+  @top-right {
+    content: "FCCC" element(sessionCode);
+    font-family: Times New Roman;
+    font-size:14.04pt;
+    line-heigh: 1.2;
+    margin-bottom: 5mm;
+    text-align:right;
+    vertical-align: bottom;
+    width: 60mm;
+    border-bottom: 1pt solid #000;   
+  }
+  @bottom-right{
+    content: element(footerRight);
+  }
+  @bottom-center{
+  }
+  @bottom-left{
+    content: element(footerLeft);
+  }
+  
 
+}
 [data-session-code] {
   string-set: sess-code attr(data-session-code);
 }
@@ -21,6 +70,58 @@
 .rh-sess-code {
   display: none;
 }
+#sessionpre{
+  page: SessionPre;
+}
+div#sessionpre > div, div#sessionpre > div.header/* , div> .footerLeft */{
+  margin-left: 0mm!important;
+  margin-right: 0mm!important;
+}
+/*Folios top*/
+img#unlogo {
+  width: 10vw;
+  position: running(logo);
+  margin-right: 5mm;
+  }
+.sessionCode {
+    position: running(sessionCode);
+    display:inline;
+    font-size:9.96pt;
+}
+
+  /*Folios bottom*/
+
+  .footerLeft{
+    position: running(footerLeft);
+    font-size:9.96pt;
+    vertical-align:bottom;
+  }
+  .footerRight img{
+    width:20mm;
+  }
+  .footerRight img:first-of-type{
+    margin-bottom: 5mm;
+  }
+  .footerRight img + img{
+    margin-left: 4mm; 
+    width:15mm;
+
+  }
+  .footerRight{
+    position: running(footerRight);
+    text-align: right;
+  }
+  /* Header */
+  .header {
+    height: 45mm;
+    border-bottom: 2px solid black;
+    margin-bottom: 5px;
+  }
+  .FCCClogo {
+    /* position: running(FCCClogo); */
+    height: 16mm;
+  }
+
 
 /* add page number to the table of contents */
 
@@ -35,7 +136,7 @@ div.toc>div {
 }
 
 .toc a::after {  
-  content: leader(dotted) "" target-counter(attr(href url), page);
+  content: leader(dotted) "" target-counter(attr(href url),page);
   margin-right: 2px;
 }
 .toc ul {
@@ -77,6 +178,146 @@ span.descres-code {
   align-items: flex-start;
   margin:0!important;
 }
+
+/* MAIN CSS */
+
+/*body*/
+*{
+  font-family: "Times New Roman", Times, serif;
+}
+div {
+margin-bottom: 6pt!important;
+margin-left: 20mm!important;
+margin-right: 20mm!important;
+font-family: Times New Roman!important;
+text-align: justify;
+line-height: 1;
+letter-spacing: 0.06pt;
+}
+
+.Decision {
+font-size: 14.04pt;
+font-weight: bold;
+color: #000;
+background-color: transparent!important;
+text-align: left!important;
+margin-bottom: 16.15pt!important; 
+letter-spacing: 0.06pt;
+line-height: 1.2;
+}
+.timesnewromanpsmt_14_0_b {
+font-size: 14.04pt;
+font-weight: bold;
+color: #000;
+text-align: left!important;
+margin-bottom: 11.15pt!important; 
+letter-spacing: -0.06pt;
+line-height: 1.2;
+
+}
+
+.chapter {
+font-family: Times New Roman;
+font-size: 14.04pt;
+font-weight: bold;
+color: #000;
+text-align: left!important;
+margin-bottom: 11.14pt;
+background-color: transparent!important;
+line-height: 1.2;
+display: inline-block;
+page-break-after: avoid!important;
+page-break-inside:avoid;
+letter-spacing: -0.01pt;
+margin-left: -12mm;
+margin-top: 6pt;
+}
+.subchapter{
+font-family: Times New Roman;
+font-size: 12pt;
+font-weight: bold;
+color: #000;
+text-align: left!important;
+margin-bottom: 11.14pt;
+background-color: transparent!important;
+line-height: 1.2;
+display: inline-block;
+page-break-after: avoid!important;
+page-break-inside:avoid;
+letter-spacing: -0.01pt;
+margin-left: -12mm;
+margin-top: 6pt;
+}
+.chapter+.subchapter, div>span.subchapter+div>span.para, h3+p {
+page-break-before: avoid;
+}
+/* .subchapter:first-child {
+margin-right: 9mm
+} */
+
+div>span.timesnewromanpsmt_10_0_i:first-of-type{
+margin-left: 6mm;
+}
+
+/* numbers list */
+.para {
+margin-right: 6mm;
+background-color: transparent!important;
+font-size: 9.96pt;
+letter-spacing: 0.06pt;
+line-height: 1.2;
+}
+.subpara {
+margin-left: 6mm;
+font-family: Times New Roman;
+font-size: 9.96pt;
+/* display: block; */
+background-color: transparent!important;
+}
+/* subpara in html (a)text not possible to give space*/
+
+.subsubpara{
+margin-left: 6mm;
+font-family: Times New Roman;
+display: block;
+background-color: transparent!important;
+text-align: justify!important;
+font-size: 9.96pt;
+}
+.timesnewromanpsmt_10_0, .timesnewromanpsmt_10_0_i, .timesnewromanpsmt_10_0_b {
+font-size: 9.96pt;
+font-family: Times New Roman;
+letter-spacing: 0.06pt;
+/* line-height: 1.2; */
+page-break-inside: avoid;
+}
+/* Footnotes */
+.timesnewromanpsmt_6_0 {
+vertical-align: super;
+margin-right: 4pt;
+font-size: 6pt;
+}
+div>.timesnewromanpsmt_6_0 {
+vertical-align: super;
+margin-right: 4pt;
+font-size: 6pt;
+}
+.footnote {
+    float: footnote;
+    font-size: 9pt;
+    counter-increment: footnote;
+    text-indent: 0;
+    letter-spacing: 0.06pt;
+    line-height:1.2;
+}
+/* Force line break in footnote span number */
+.footnote>.timesnewromanpsmt_6_0:before {
+  content: "";
+  display: block;
+} 
+.footnote>.timesnewromanpsmt_9_0 {
+text-wrap: word-break;
+} 
 
 
 
