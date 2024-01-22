@@ -73,10 +73,11 @@
 #sessionpre{
   page: SessionPre;
 }
-div#sessionpre > div, div#sessionpre > div.header/* , div> .footerLeft */{
+/* div#sessionpre > div, div#sessionpre > div.header/* , div> .footerLeft */
+div#sessionpre, div#sessionpre  div, div.header{
   margin-left: 0mm!important;
   margin-right: 0mm!important;
-}
+} 
 /*Folios top*/
 img#unlogo {
   width: 10vw;
