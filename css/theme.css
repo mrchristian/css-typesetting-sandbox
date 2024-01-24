@@ -139,7 +139,6 @@ img#unlogo {
   .header div span {float: left; }
 
   div > img.FCCClogo {
-    /* position: running(FCCClogo); */
     width: 68.10mm;
   }
   .header div:nth-child(1){
